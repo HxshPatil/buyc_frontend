@@ -1,0 +1,28 @@
+/* container.css */
+
+.container {
+    position: fixed; 
+    width: 100%;
+    background-color: #05386B;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Updated to space-between */
+    padding: 0 20px; /* Add padding for better spacing */
+    font-size: calc(10px + 2vmin);
+    color:#FFFFFF;
+  }
+  
+  .container-footer {
+    background-color: #05386B;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Updated to space-between */
+    padding: 0 20px; /* Add padding for better spacing */
+    font-size: calc(10px + 2vmin);
+    color:#FFFFFF;
+  }
+  
