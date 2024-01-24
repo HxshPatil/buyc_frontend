@@ -26,12 +26,14 @@ function App() {
   return (
     <div className="App">
       <Header setCars={setCars}/>
-      <Filter />
-      <div className='car-container'>
-      {cars.map((car) => (
+      <div className="page">
+        <Filter />
+        <div className='car-container'>
+          {cars.map((car) => (
           // Pass each car as a prop to the Card component
           <Card car={car} />
-        ))}
+          ))}
+        </div>
       </div>
       <Footer />
     </div>

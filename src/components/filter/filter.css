@@ -1,12 +1,15 @@
 /* filter.css */
 
 .filter {
+    position:fixed;
+    height:100%;
+    width: 300px;
     background-color: #05386B;
     min-height: 10vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 50px;
     font-size: calc(10px + 2vmin);
     color:#FFFFFF;
   }
@@ -15,17 +18,23 @@
   /* Additional styles for filter options */
   .filter-options {
     display: flex;
+    flex-direction: column;
     align-items: center;
   }
   
   .filter-select {
-    margin-left: 10px;
+    margin-top: 10px;
     min-height: 3vh;
   }
 
   .btn{
-    margin-left: 10px;
+    margin-top: 10px;
     min-height: 3vh;
     padding: 2px;
+  }
+
+  .btns{
+    display: flex;
+    flex-direction: row;
   }
   

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { fetchSearchData } from '../../services';
 
 const useCarSearch = () => {

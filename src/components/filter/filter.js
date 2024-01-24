@@ -45,8 +45,10 @@ const Filter = ({ onFilterChange }) => {
           <option value="">Select Color</option>
           {/* Add color options */}
         </select>
-        <button onClick={handleFilter} className="btn">Apply</button>
-        <button onClick={handleFilter} className="btn">Reset</button>
+        <div className="btns">
+          <button onClick={handleFilter} className="btn">Apply</button>
+          <button onClick={handleFilter} className="btn">Reset</button>
+        </div>
       </div>
     </div>
   );

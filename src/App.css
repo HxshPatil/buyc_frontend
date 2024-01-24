@@ -8,10 +8,19 @@
 
 .App {
   text-align: center;
-  background-color:#FFFFFF;
 }
 
+.page{
+  padding-top: 80px ;
+  display:flex;
+  top:80px;
+  height:100%; 
+  width: 100%;
+} 
+
+
 .car-container {
+  padding-left: 300px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,7 +29,7 @@
 }
 
 .btn{
-  margin-left: 10px;
+  margin:10px;
   min-height: 3vh;
   padding: 2px;
 }
