@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Card from '../card/card';
+import React, { useEffect } from 'react';
 import useCarSearch from './useCarSearch';
 import "./search.css";
-import axios from 'axios';
 
 const CarSearch = ({setCars}) => {
   const {
     searchQuery,
     results,
-    isFilterApplied,
     handleSearch,
     resetSearch,
     handleSearchChange,

@@ -23,11 +23,23 @@ function App() {
     fetchCars();
   }, []);
 
+  const onFilterChange = async (minPrice, maxPrice, mileage, selectedColor) => {
+    try {
+      // console.log("works");
+      // console.log(mileage);
+      const response = await axios.get(`https://buyc-backend-nu.vercel.app/api/filter?mileage=${mileage}&maxPrice=${maxPrice}&colors=${selectedColor}&minPrice=${minPrice}`);
+      setCars(response.data);
+
+    } catch (error) {
+      console.error('Error fetching cars:', error.message);
+    }
+};
+
   return (
     <div className="App">
       <Header setCars={setCars}/>
       <div className="page">
-        <Filter />
+        <Filter onFilterChange= {onFilterChange}/>
         <div className='car-container'>
           {cars.map((car) => (
           // Pass each car as a prop to the Card component
