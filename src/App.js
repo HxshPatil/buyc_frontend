@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/all');
+        const response = await axios.get('https://buyc-backend-nu.vercel.app/api/all');
         setCars(response.data.cars);
       } catch (error) {
         console.error('Error fetching cars:', error.message);
