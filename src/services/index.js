@@ -9,11 +9,11 @@ export const fetchSearchData = async (searchQuery) => {
     }
 };
 
-export const fetchCars = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/api/all');
-      setCars(response.data.cars);
-    } catch (error) {
-      console.error('Error fetching cars:', error.message);
-    }
-};
+// export const fetchCars = async () => {
+//     try {
+//       const response = await axios.get('http://localhost:8000/api/all');
+//       setCars(response.data.cars);
+//     } catch (error) {
+//       console.error('Error fetching cars:', error.message);
+//     }
+// };
