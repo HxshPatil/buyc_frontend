@@ -7,12 +7,12 @@ const CarSearch = ({setCars}) => {
     searchQuery,
     results,
     handleSearch,
-    resetSearch,
+    // resetSearch,
     handleSearchChange,
   } = useCarSearch();
 
   useEffect(()=>{
-    console.log('results:', results)
+    //console.log('results:', results)
     setCars(results)
   },[results])
   return (
@@ -24,8 +24,8 @@ const CarSearch = ({setCars}) => {
           value={searchQuery}
           onChange={(e) => handleSearchChange(e.target.value)}
         />
-        <button onClick={handleSearch} className="btn">Apply</button>
-        <button onClick={resetSearch} className="btn">Reset</button>
+        <button onClick={handleSearch} className="btn">Search</button>
+        {/* <button onClick={resetSearch} className="btn">Reset</button> */}
       </div>
     </div>
   );

@@ -21,6 +21,7 @@
 
 .car-container {
   padding-left: 300px;
+  margin-left: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
