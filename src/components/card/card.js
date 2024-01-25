@@ -11,7 +11,8 @@ const Card = ({ car }) => {
     <div className='card-container'>
       <div className="card-container-front">
         <div className='image-container'>
-          <img src={"https://www.hdwallpapers.in/download/yellow_car_dark_background_hd_yellow-HD.jpg"} alt={car.manufacturer + ' ' + car.model} />
+          {/* Use the image_url field for the image source */}
+          <img src={car.image_url} alt={car.manufacturer + ' ' + car.model} />
         </div>
         <div className='card-title'>
           <h3>{car.manufacturer + ' ' + car.model}</h3>
