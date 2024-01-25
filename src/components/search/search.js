@@ -18,7 +18,7 @@ const CarSearch = ({setCars}) => {
   return (
     <div>
       <div className="search-container">
-        <input
+        <input className="input-search"
           type="text"
           placeholder="Search for cars..."
           value={searchQuery}

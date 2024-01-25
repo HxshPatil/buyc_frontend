@@ -23,7 +23,7 @@ function App() {
     fetchCars();
   }, []);
 
-  const onFilterChange = async (minPrice, maxPrice, mileage, selectedColor) => {
+  const onFilterChange = async ( mileage, selectedColor,minPrice, maxPrice) => {
     try {
       // console.log("works");
       // console.log(mileage);
