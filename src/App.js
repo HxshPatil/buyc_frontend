@@ -37,6 +37,15 @@ function App() {
     };
     fetchCars();
 
+    const fetchData = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ data: "Hello from the server!" });
+        }, 4000); // Simulate a 2-second delay
+      });
+    };
+    fetchData();
+
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
@@ -83,10 +92,12 @@ function App() {
         <Header setCars={setCars} toggleHide={toggleHide} />
         <div className="page">
           {hide && <Filter onFilterChange={onFilterChange} colors={colors} />}
+
           <div
             className="car-container"
             style={{ overflowY: "scroll", height: "100%", width: "100%" }}
           >
+            {cars.length === 0 && <h1>Loading...</h1>}
             <div style={{ minWidth: "400px" }}>
               {filteredCars.map((car, index) => (
                 <li key={index} style={{ display: "flex", padding: "10px" }}>
@@ -122,22 +133,25 @@ function App() {
     );
   } else {
     return (
-      <div className="App" style={{ height: "100vh", overflowY: "hidden" }}>
-        <Header setCars={setCars} toggleHide={toggleHide} />
-        <div className="page">
-          {hide && <Filter onFilterChange={onFilterChange} colors={colors} />}
-          <div
-            className="car-container"
-            style={{ overflowY: "scroll", height: "100vh", width: "100%" }}
-          >
-            {filteredCars.map((car) => (
-              // Pass each car as a prop to the Card component
-              <Card car={car} />
-            ))}
+      <React.Suspense fallback={<p>Loading...</p>}>
+        <div className="App" style={{ height: "100vh", overflowY: "hidden" }}>
+          <Header setCars={setCars} toggleHide={toggleHide} />
+          <div className="page">
+            {hide && <Filter onFilterChange={onFilterChange} colors={colors} />}
+            <div
+              className="car-container"
+              style={{ overflowY: "scroll", height: "100vh", width: "100%" }}
+            >
+              {cars.length === 0 && <h1>Loading...</h1>}
+              {filteredCars.map((car) => (
+                // Pass each car as a prop to the Card component
+                <Card car={car} />
+              ))}
+            </div>
           </div>
+          {/* <Footer /> */}
         </div>
-        {/* <Footer /> */}
-      </div>
+      </React.Suspense>
     );
   }
 }
