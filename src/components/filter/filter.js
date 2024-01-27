@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./filter.css";
-import { Slider, Checkbox } from "@mui/material";
+import { Slider } from "@mui/material";
 
 const Filter = ({ onFilterChange, colors }) => {
   const [price, setPrice] = useState([0, 50000]);
   const [mileage, setMileage] = useState(0);
-  const [selectedColors, setSelectedColors] = useState([colors]);
+  const [selectedColors, setSelectedColors] = useState(colors);
 
   const handleChange = (_, newValue) => {
     setPrice(newValue);
@@ -30,29 +30,26 @@ const Filter = ({ onFilterChange, colors }) => {
     setPrice([0, 50000]);
     setMileage(0);
     setSelectedColors(colors);
+    onFilterChange(0, colors, 0, 50000);
   };
 
   return (
-    <div className="filter" style={{ height: "100vh" }}>
+    <div className="filter" style={{ height: "100%" }}>
       <div className="filter-options">
         <p>
-          <h5>Price filter:</h5>
+          <h5>Price range:</h5>
         </p>
         <div className="slider-values">
           <div className="filter1">
-            <h6>${price[0]}</h6>
-          </div>
-          <div>
-            <h6>-</h6>
-          </div>
-          <div className="filter2">
-            <h6>${price[1]}</h6>
+            <h6>
+              ${price[0].toLocaleString()} - ${price[1].toLocaleString()}
+            </h6>
           </div>
         </div>
         <Slider value={price} min={0} max={50000} onChange={handleChange} />
         <div className="mileage-filter">
           <p>
-            <h5>Mileage filter:</h5>
+            <h5>Minimum mileage:</h5>
           </p>
           <input
             classname="filter-input"
@@ -64,7 +61,7 @@ const Filter = ({ onFilterChange, colors }) => {
         </div>
         <div className="color-filter">
           <p>
-            <h5>Color filter:</h5>
+            <h5>Colors:</h5>
           </p>
           {/* <input
             classname="filter-input"
@@ -76,20 +73,29 @@ const Filter = ({ onFilterChange, colors }) => {
           <table border="0px">
             {colors.map((color) => (
               <tr key={color}>
-                  <td >
-                    <input
-                      type="checkbox"
-                      id={color}
-                      value={color}
-                      checked={selectedColors.includes(color)}
-                      onChange={() => handleCheckboxChange(color)}
-                    />
-                  </td>
-                <td style={{ verticalAlign:'top' }}><label htmlFor={color} style={{ marginLeft: '5px'}}>{color}</label></td>
+                <td>
+                  <input
+                    type="checkbox"
+                    id={color}
+                    value={color}
+                    checked={selectedColors.includes(color)}
+                    onChange={() => handleCheckboxChange(color)}
+                  />
+                </td>
+                <td style={{ verticalAlign: "top" }}>
+                  <label htmlFor={color} style={{ marginLeft: "5px" }}>
+                    {color}
+                  </label>
+                </td>
               </tr>
             ))}
           </table>
-          <button onClick={handleFilter} className="btn">
+          <button
+            onClick={() => {
+              setSelectedColors(colors);
+            }}
+            className="btn"
+          >
             Select all
           </button>
         </div>

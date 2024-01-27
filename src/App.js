@@ -53,6 +53,10 @@ function App() {
     return { innerWidth, innerHeight };
   }
 
+  const toggleHide = () => {
+    setHide(!hide);
+  };
+
   const onFilterChange = async (
     mileage,
     selectedColors,
@@ -73,20 +77,15 @@ function App() {
       selectedColors.includes(car.colors)
   );
 
-  console.log(window.innerWidth);
-
   if (window.innerWidth < 932) {
     return (
-      <div className="App" style={{ height: "100vh", overflowY: "hidden" }}>
-        <button onClick={() => {setHide(!hide)}} className="btn">
-          Menu
-        </button>
-        <Header setCars={setCars} />
+      <div className="App" style={{ height: "100%", overflowY: "scroll" }}>
+        <Header setCars={setCars} toggleHide={toggleHide} />
         <div className="page">
           {hide && <Filter onFilterChange={onFilterChange} colors={colors} />}
           <div
             className="car-container"
-            style={{ overflowY: "scroll", height: "100vh", width: "100%" }}
+            style={{ overflowY: "scroll", height: "100%", width: "100%" }}
           >
             <div style={{ minWidth: "400px" }}>
               {filteredCars.map((car, index) => (
@@ -100,15 +99,15 @@ function App() {
                     <h3>
                       {car.manufacturer} {car.model}
                     </h3>
-                    <div style={{ display: "flex" }}>
-                      <div style={{}}>
+                    <div style={{ display: "flex", margin: "10px" }}>
+                      <div style={{ textAlign: "start" }}>
                         <p>Year: {car.year}</p>
                         <p>Price: ${car.list_price}</p>
                         <p>Color: {car.colors}</p>
                       </div>
-                      <div>
-                        <p>Mileage: {car.mileage}</p>
+                      <div style={{ textAlign: "start", marginLeft: "10px" }}>
                         <p>Power (bhp): {car.power_bhp}</p>
+                        <p>Mileage: {car.mileage}</p>
                         <p>Max Speed: {car.max_speed}</p>
                       </div>
                     </div>
@@ -124,10 +123,7 @@ function App() {
   } else {
     return (
       <div className="App" style={{ height: "100vh", overflowY: "hidden" }}>
-        <button onClick={() => {setHide(!hide)}} className="btn">
-          Reset
-        </button>
-        <Header setCars={setCars} />
+        <Header setCars={setCars} toggleHide={toggleHide} />
         <div className="page">
           {hide && <Filter onFilterChange={onFilterChange} colors={colors} />}
           <div

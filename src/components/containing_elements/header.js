@@ -4,7 +4,7 @@ import axios from "axios";
 import CarSearch from "../../search/search";
 import Fuse from "fuse.js";
 
-const Header = ({ setCars }) => {
+const Header = ({ setCars, toggleHide }) => {
   const fuseOptions = {
     keys: ["manufacturer_model"],
   };
@@ -12,7 +12,7 @@ const Header = ({ setCars }) => {
   const onSearch = async (query) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/search?query=${query}`
+        `https://buyc-backend-nu.vercel.app/api/search?query=${query}`
       );
       setCars(response.data);
       if (response.data.length === 0) {
@@ -40,7 +40,17 @@ const Header = ({ setCars }) => {
   };
   return (
     <div className="container">
-      <h1>BUYC</h1>
+      <div style={{ display: "flex" }}>
+        <button
+          onClick={() => {
+            toggleHide();
+          }}
+          className="btn"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <h2>BUYC</h2>
+      </div>
       <CarSearch onSearch={onSearch} onClear={onClear} />
     </div>
   );
