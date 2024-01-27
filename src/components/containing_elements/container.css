@@ -1,11 +1,10 @@
 /* container.css */
 
 .container {
-    position: fixed; 
+  position:fixed;
     width: 100%;
-    height:80px;
     background-color: #05386B;
-    min-height: 80px;
+    height: 80px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,17 +15,7 @@
     z-index: 1;
   }
   
-  .container-footer {
-    background-color: #05386B;
-    min-height: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; /* Updated to space-between */
-    padding: 0 20px; /* Add padding for better spacing */
-    font-size: calc(10px + 2vmin);
-    color:#FFFFFF;
-  }
+
   
   /* @media only screen and (max-width: 600px) {
     .container { 

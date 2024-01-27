@@ -1,11 +1,9 @@
 /* filter.css */
 
 .filter {
-    position:fixed;
     height:100%;
-    width: 300px;
+    width: 40%;
     background-color: #05386B;
-    /* min-height: 10vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,12 +48,24 @@
 
   }
 
+  .checkboxes label {
+    display: inline-block;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  .checkboxes input {
+    vertical-align: middle;
+  }
+  .checkboxes label span {
+    vertical-align: middle;
+  }
+
   .mileage-filter{
     margin-bottom: 20px;
   }
-/* 
+
   @media only screen and (max-width: 600px) {
-    .filter {
-      width: 20%;
+    .filter{
+      width:100%;
     }
-  } */
+  }
