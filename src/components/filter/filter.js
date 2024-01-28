@@ -46,7 +46,13 @@ const Filter = ({ onFilterChange, colors }) => {
             </h6>
           </div>
         </div>
-        <Slider value={price} min={0} max={50000} onChange={handleChange} />
+        <Slider
+          value={price}
+          min={0}
+          max={50000}
+          onChange={handleChange}
+          step={100}
+        />
         <div className="mileage-filter">
           <p>
             <h5>Minimum mileage:</h5>
