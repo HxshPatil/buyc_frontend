@@ -69,13 +69,6 @@ const Filter = ({ onFilterChange, colors }) => {
           <p>
             <h5>Colors:</h5>
           </p>
-          {/* <input
-            classname="filter-input"
-            type="text"
-            value={selectedColor}
-            placeholder="enter color"
-            onChange={(e) => setSelectedColor(e.target.value)}
-          /> */}
           <table border="0px">
             {colors.map((color) => (
               <tr key={color}>
@@ -89,7 +82,10 @@ const Filter = ({ onFilterChange, colors }) => {
                   />
                 </td>
                 <td style={{ verticalAlign: "top" }}>
-                  <label htmlFor={color} style={{ marginLeft: "5px" }}>
+                  <label
+                    htmlFor={color}
+                    style={{ marginLeft: "5px", fontSize: "1.25rem" }}
+                  >
                     {color}
                   </label>
                 </td>

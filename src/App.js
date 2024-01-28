@@ -37,15 +37,6 @@ function App() {
     };
     fetchCars();
 
-    const fetchData = () => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve({ data: "Hello from the server!" });
-        }, 4000); // Simulate a 2-second delay
-      });
-    };
-    fetchData();
-
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
@@ -109,9 +100,9 @@ function App() {
                   <p>Color: {car.colors}</p>
                 </div>
                 <div style={{ textAlign: "start", marginLeft: "10px" }}>
-                  <p>Power (bhp): {car.power_bhp}</p>
-                  <p>Mileage: {car.mileage}</p>
-                  <p>Max Speed: {car.max_speed}</p>
+                  <p>Power(bhp): {car.power_bhp}</p>
+                  <p>Mileage: {car.mileage}Kmpl</p>
+                  <p>Max Speed: {car.max_speed}Kmph</p>
                 </div>
               </div>
             </div>
@@ -141,7 +132,12 @@ function App() {
       <Header setCars={setCars} toggleHide={toggleHide} />
       <div className="page">
         {hide && <Filter onFilterChange={onFilterChange} colors={colors} />}
-        {card_container}
+        <div>
+          {cars.length !== 0 && filteredCars.length !== 0 && (
+            <h4>{filteredCars.length} cars found!</h4>
+          )}
+          {card_container}
+        </div>
       </div>
       {/* <Footer /> */}
     </div>

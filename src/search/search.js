@@ -5,13 +5,11 @@ const CarSearch = ({ onSearch, onClear }) => {
   const [query, setQuery] = useState("")
 
   const handleClear = (text) => {
-    // Call the onFilterChange prop to pass the filter criteria to the parent component
     setQuery(text);
     if (text.length === 0) onClear();
   };
 
   const handleSearch = () => {
-    // Call the onFilterChange prop to pass the filter criteria to the parent component
     onSearch(query);
   };
 

@@ -1,23 +1,31 @@
 /* container.css */
 
 .container {
-  position:fixed;
-    width: 100%;
-    background-color: #05386B;
-    height: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between; /* Updated to space-between */
-    /* padding: 0 20px;  */
-    font-size: 30px;
-    color:#FFFFFF;
-    z-index: 1;
-  }
-  
+  position: fixed;
+  width: 100%;
+  background-color: #3AAFA9;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+  color: #FFFFFF;
+  z-index: 1;
+}
 
-  
-  /* @media only screen and (max-width: 600px) {
+.header-content{
+  align-items: center;
+}
+
+.hamburger-btn{
+  height: fit-content;
+  padding: 5px;
+}
+
+
+
+/* @media only screen and (max-width: 600px) {
     .container { 
       width: 100%;
       height:80px;

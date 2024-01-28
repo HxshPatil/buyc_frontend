@@ -40,14 +40,14 @@ const Header = ({ setCars, toggleHide }) => {
   };
   return (
     <div className="container">
-      <div style={{ display: "flex" }}>
+      <div className="header-content" style={{ display: "flex" }}>
         <button
+          className="hamburger-btn"
           onClick={() => {
             toggleHide();
           }}
-          className="btn"
         >
-          <i class="fa fa-bars"></i>
+          <i className="fa fa-bars"></i>
         </button>
         <h2>BUYC</h2>
       </div>

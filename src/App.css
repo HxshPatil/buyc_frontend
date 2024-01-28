@@ -37,9 +37,11 @@
 }
 
 .btn{
-  margin:10px;
-  min-height: 3vh;
-  padding: 2px;
+  height: 40px;
+  padding: 10px 5px;
+  text-align: center;
+  line-height: 0.4em;
+  margin:5px
 }
 
 @media only screen and (max-width: 600px) {

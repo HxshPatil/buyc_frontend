@@ -1,71 +1,68 @@
 /* filter.css */
 
 .filter {
-    height:100%;
-    width: 40%;
-    background-color: #05386B;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 50px;
-    font-size: 30px;
-    color:#FFFFFF;
-  }
+  height: 100%;
+  width: 30%;
+  background-color: #3AAFA9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 50px;
+  font-size: 30px;
+  color: #FFFFFF;
+}
 
-  
-  /* Additional styles for filter options */
-  .filter-options {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .filter-select {
-    margin-top: 10px;
-    min-height: 5vh;
-  }
 
-  .btn{
-    margin-top: 10px;
-    height: 5vh;
-    padding: 10px;
-  }
+/* Additional styles for filter options */
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .btns{
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .slider-values{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
+.filter-select {
+  margin-top: 10px;
+  min-height: 5vh;
+}
 
-  .filter-input{
-    margin-bottom: 20px;
-    min-height: 5vh;
 
-  }
+.btns {
+  display: flex;
+  flex-direction: row;
+}
 
-  .checkboxes label {
-    display: inline-block;
-    padding-right: 10px;
-    white-space: nowrap;
-  }
-  .checkboxes input {
-    vertical-align: middle;
-  }
-  .checkboxes label span {
-    vertical-align: middle;
-  }
+.slider-values {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
-  .mileage-filter{
-    margin-bottom: 20px;
-  }
+.filter-input {
+  margin-bottom: 20px;
+  min-height: 5vh;
 
-  @media only screen and (max-width: 600px) {
-    .filter{
-      width:100%;
-    }
+}
+
+.checkboxes label {
+  display: inline-block;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.checkboxes input {
+  vertical-align: middle;
+}
+
+.checkboxes label span {
+  vertical-align: middle;
+}
+
+.mileage-filter {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .filter {
+    width: 100%;
   }
+}

@@ -1,14 +1,19 @@
 /* card.css */
 
 .card-container {
-  background-color: #05386B;
+  background-color: #231942;
   border-radius: 15px;
+  overflow: hidden;
   transition: transform 0.3s ease;
   margin: 10px;
   width: 300px;
   height: fit-content;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: transparent;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
 }
 
 .image-container {
@@ -66,7 +71,8 @@
 
 
 .card-container-front {
-  background-color: #05386B;
+  /* background-color: #231942; */
+  background-color: #3AAFA9;
   color: #FFFFFF;
 }
 
